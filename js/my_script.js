@@ -25,21 +25,21 @@ for ( let proprietà in studente) {
 let studenti = 
 [
     {
-    studente : 1,
-    nome : "Nicolo",
-    cognome : "Desiato",
+    "nome" : "Nicolo",
+    "cognome" : "Desiato",
+    "età" : 10,
     },
 
     {
-    studente : 2,
-    nome : "Paolo",
-    cognome : "Rossi",
+    "nome" : "Paolo",
+    "cognome" : "Rossi",
+    "età" : 10,
     },
 
     {
-    studente : 3,
-    nome : "Mario",
-    cognome : "Cinque",
+    "nome" : "Mario",
+    "cognome" : "Cinque",
+    "età" : 10,
     },
 
     
@@ -49,10 +49,21 @@ console.log(studenti[0]);
 // Ciclare su tutti gli studenti e stampare per ognuno di essi, nome e cognome.
 
 for ( let i = 0; i < studenti.length; i++) {
-    console.log(studenti[i]);
-    for ( let proprietà in studenti[i]) {
-      console.log(studenti[i][proprietà])
-    }
+    let studenteAttuale = studenti[i];
+    // console.log(studenteAttuale);
+    let nomeStudenteAttuale = studenteAttuale["nome"];
+    let cognomeStudenteAttuale = studenteAttuale["cognome"];
+    console.log(nomeStudenteAttuale + " " + cognomeStudenteAttuale);
 }
 
-   
+// Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo oggetto studente 
+// inserendo nell’ordine: nome, cognome e età.
+
+let studenteNuovo = {
+    nome : prompt("Inserisci il nome del nuovo studente"),
+    cognome : prompt("Inserisci il cognome del nuovo studente"),
+    età : prompt("Inserisci l'età del nuovo studente"),
+};
+
+studenti.push(studenteNuovo);
+console.log(studenti);
